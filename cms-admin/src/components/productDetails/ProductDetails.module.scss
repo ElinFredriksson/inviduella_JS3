@@ -1,0 +1,55 @@
+.details_container {
+  display: flex;
+  justify-content: center;  
+  text-align: center;
+  margin: 1rem;
+  
+  .right {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    // border: 1px solid black;
+    h2 {
+      font-size: 2rem;
+    }
+    h4 {
+      font-size: 1rem;
+      margin-top: 5rem;
+    }
+
+    button {
+      width: 100%;
+    }
+    button:hover {
+      width: 100%;
+      color: white;
+      background-color: black;
+    }
+  }
+    
+  .product_picture {
+  }
+  
+  .text-center {
+    
+  }
+  
+  .product_description {
+
+    
+
+  }
+  p {
+    font-size: 4rem;
+    color: red;
+    margin-top: 14rem;
+  }
+
+  img {
+    max-width: 450px;
+    width: 500px;
+  }
+}
+
+
+

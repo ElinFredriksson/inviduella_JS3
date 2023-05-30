@@ -1,0 +1,21 @@
+.order_details-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .detail_items{
+    display: flex;
+    flex-direction: row;
+    .left_side-box{
+
+
+      img{
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+      }
+    }
+  }
+
+}
