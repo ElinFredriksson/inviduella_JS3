@@ -5,46 +5,91 @@
   align-items: center;
   justify-content: center;
 }
-.products_container .products-collection {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2rem;
-}
 .products_container .products-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid lightgray;
-  padding-bottom: 1rem;
-  width: 80%;
-  text-align: center;
-}
-.products_container .products-categories {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  list-style: none;
-  font-weight: lighter;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid lightgray;
-  width: 80%;
-  padding: 0 0 1rem;
+  margin-bottom: 2rem;
 }
 
 .product_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid lightgray;
-  padding: 0.5rem;
+  width: 80vw;
+  height: 15vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: all 0.3s ease-in-out;
 }
-.product_item .product_img img {
-  width: 250px;
-  height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.product_item .left_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.product_item .fa-shopping-cart {
-  color: gray;
+.product_item .left_box img {
+  width: 60px;
+  height: 60px;
+  margin-right: 2rem;
 }
-.product_item .fa-shopping-cart:hover {
+.product_item .left_box img:hover {
+  transform: scale(2.2);
+  transition: all 0.3s ease-in-out;
+}
+.product_item .left_box .product-name {
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+.product_item .left_box a {
+  text-decoration: none;
   color: black;
+}
+.product_item .right_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.product_item .right_box .product-description {
+  text-align: left;
+  width: 200px;
+  margin-right: 1rem;
+}
+.product_item .right_box .product-price {
+  font-weight: 700;
+  text-align: left;
+  width: 70px;
+}
+.product_item .right_box .productList-btns {
+  display: flex;
+  align-items: end;
+  margin-left: 2rem;
+}
+.product_item .right_box .productList-btns .edit-btn {
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+  border: none;
+  background-color: transparent;
+  color: black;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
+}
+.product_item .right_box .productList-btns .edit-btn:hover {
+  color: green;
+}
+.product_item .right_box .productList-btns .delete-btn {
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+  border: none;
+  background-color: transparent;
+  color: black;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.product_item .right_box .productList-btns .delete-btn:hover {
+  color: red;
+}
+
+.product_item:hover {
+  background-color: #EFEFEF;
+  padding-right: 3rem;
 }/*# sourceMappingURL=Products.module.css.map */

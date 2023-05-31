@@ -1,0 +1,78 @@
+.login-wrap {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+.login-wrap .user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.login-wrap .user-details .input-box {
+  margin: 1rem 0 1rem 0;
+}
+.login-wrap .user-details .input-box label {
+  display: block;
+  font-weight: 300;
+  margin-bottom: 0.3rem;
+}
+.login-wrap .user-details .input-box span {
+  color: red;
+  font-size: 1rem;
+}
+.login-wrap .user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  border: transparent;
+  padding-left: 1rem;
+  background-color: transparent;
+  font-size: 1rem;
+  align-items: center;
+}
+.login-wrap .user-details .input-box .terms {
+  display: inline-block;
+  width: 200%;
+}
+.login-wrap .user-details .input-box .terms input {
+  height: 1rem;
+  margin-top: 1rem;
+  padding-right: 0.5rem;
+}
+.login-wrap .user-details .input-box .terms p {
+  font-size: 0.7rem;
+}
+.login-wrap .social_login {
+  margin: 1rem 0;
+}
+.login-wrap .social_login .social_login_btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  color: rgb(250, 49, 80);
+  background-color: #fff;
+  border: 1px solid rgb(250, 49, 80);
+  border-radius: 0.2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.login-wrap .social_login .social_login_btn:hover {
+  background-color: rgb(250, 49, 80);
+  color: #fff;
+}
+.login-wrap .submit-btn {
+  width: 100%;
+  margin: 1rem 0;
+  background-color: rgb(250, 49, 80);
+  color: #fff;
+  border: 1px solid rgb(250, 49, 80);
+  border-radius: 0.2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.login-wrap .submit-btn:hover {
+  background-color: #fff;
+  color: rgb(250, 49, 80);
+}/*# sourceMappingURL=LoginAdmin.module.css.map */

@@ -32,10 +32,10 @@ const OrderDetails = () => {
             </div>
           </div>
         ))}
-      </section>
         <Link to={`/orders`}>
           <button className="btn-back">Back to orders</button>
         </Link>
+      </section>
     </div>
   )
 }

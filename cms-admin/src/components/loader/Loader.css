@@ -1,0 +1,23 @@
+.loader-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+.loader-container .loader {
+  margin: 5rem auto;
+  width: 80px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 13px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.3333333333);
+  border-top-color: rgba(0, 0, 0, 0.3333333333);
+  animation: spin 0.8s ease infinite;
+}
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}/*# sourceMappingURL=Loader.css.map */

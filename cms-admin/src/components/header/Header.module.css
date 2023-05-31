@@ -1,3 +1,11 @@
+.shopping-cart {
+  width: 450px;
+}
+
+.cart-image {
+  width: 100px;
+}
+
 header {
   max-width: 1224px;
   margin: 0 auto;
@@ -42,4 +50,8 @@ header {
 .nav_links_div ul .active {
   text-decoration: underline;
   text-decoration-thickness: 2px;
+}
+
+.logo {
+  width: 90%;
 }/*# sourceMappingURL=Header.module.css.map */

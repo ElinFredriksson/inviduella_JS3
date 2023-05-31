@@ -14,40 +14,39 @@
 .detail_items {
   display: flex;
   flex-direction: row;
-  align-items: flex-start; 
+  align-items: flex-start;
   margin-bottom: 20px;
   gap: 3rem;
 }
 
 .left_side-box {
-  flex-shrink: 0; 
+  flex-shrink: 0;
   margin-right: 20px;
 }
 
 .right_side-box {
   display: flex;
   flex-direction: column;
- justify-content: center;
- margin-top: 15rem;
+  justify-content: center;
+  margin-top: 15rem;
 }
 
 img {
-  width: 400px; 
-  height: auto; 
+  width: 400px;
+  height: auto;
 }
 
 .right_side-box p {
   font-size: 18px;
-  
 }
 
 .btn-back {
-  background-color:rgb(250, 49, 80);
+  background-color: rgb(250, 49, 80);
   color: #fff;
   font-family: var(--font-family);
   justify-content: center;
   padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-  border:none;
+  border: none;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
@@ -56,4 +55,4 @@ img {
 
 .btn-back:hover {
   background-color: #c22d2d;
-}
+}/*# sourceMappingURL=OrderDetails.css.map */

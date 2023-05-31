@@ -16,7 +16,7 @@ const Header = () => {
       <nav className="nav_container">
         <div className="logo_div">
           <Link to="/admin-panel">
-            <img src={logo} alt="" />
+            <img className='logo' src={logo} alt="" />
           </Link>
         </div>
         <div className="nav_links_div">
