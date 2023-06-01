@@ -5,7 +5,7 @@ import {
   signOut,
 } from 'firebase/auth';
 import { auth, db, googleProvider } from '../../../firebase/config';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 
 const registerAdmin = async (email, password) => {
   const userCredential = await createUserWithEmailAndPassword(
@@ -30,17 +30,40 @@ const logout = async () => {
 };
 
 const loginAdmin = async (email, password) => {
+  try {
+    console.log('loginAdmin')
   const userCredential = await signInWithEmailAndPassword(
     auth,
     email,
     password
   );
-  const admin = {
+
+ 
+  // Get a specific user from admins collection and filter by uid
+  const adminQuery = query(collection(db, 'admins'), where('uid', '==', userCredential.user.uid));
+  const querySnapshot = await getDocs(adminQuery);
+  console.log('querySnapshot.docs', querySnapshot.docs)
+  if (querySnapshot.docs.length === 0) {
+  return {
+      isAdmin: false,
+  }
+}
+ 
+  console.log('querySnapshot', querySnapshot);
+  if (querySnapshot.length > 0)
+    console.log('test123', querySnapshot[0].data());
+  
+  console.log('we shouldn\'t be here');
+    const admin = {
     uid: userCredential.user.uid,
     email: userCredential.user.email,
     isAdmin: true, // Add a flag to indicate admin status
   };
   return admin;
+  } catch (error) {
+    console.log('err123', error);
+  }
+  
 };
 
 const signInWithGoogle = async () => {

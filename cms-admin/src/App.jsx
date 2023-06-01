@@ -24,20 +24,23 @@ import { auth } from './firebase/config'
 import { useDispatch, useSelector } from 'react-redux'
 import { authReady } from './store/features/auth/authSlice'
 import Home from './pages/home/Home'
+import { useState } from 'react'
 
 
 
 const App = () => {
   const { authIsReady } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
+  const { admin } = useSelector((state) => state.auth)
 
+  const [user, setUser] = useState(null)
   // const isAdmin = admin && admin.isAdmin
 
   useEffect(() => {
     onAuthStateChanged(auth, (_user) => {
       console.log(_user)
       let admin = null
-
+      setUser(_user)
       if (_user) {
         admin = {
           uid: _user.uid,
@@ -49,6 +52,7 @@ const App = () => {
     })
   }, [dispatch])
 
+  console.log('isAdmin', admin, admin?.isAdmin);
   return (
     <>
       {authIsReady ? (
@@ -58,8 +62,10 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login-admin" element={<LoginAdmin />} />
             <Route path="/register-admin" element={<RegisterAdmin />}/>
-            <Route path="/admin-panel" element={<Admin />} />
-            <Route path="/admin-panel" element={<Products />} />
+            {admin?.isAdmin && (<Route path="/admin-panel" element={<Admin />} />)} 
+            {admin?.isAdmin && (<Route path="/admin-panel" element={<Products />} />)}
+          {/*  <Route path="/admin-panel" element={<Admin />} />
+            <Route path="/admin-panel" element={<Products />} />*/}
             <Route path="/product-details/:id" element={<ProductDetails />} />
             <Route path="/order-details/:id" element={<OrderDetails />} />
             <Route path="/addProduct" element={<AddProduct />}/>

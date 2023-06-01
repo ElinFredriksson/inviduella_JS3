@@ -22,8 +22,12 @@ export const loginAdminUser = createAsyncThunk(
   async (formData, thunkAPI) => {
     try {
       const { email, password } = formData;
-      return await authService.loginAdmin(email, password);
+      console.log('logging in');
+      const response = await authService.loginAdmin(email, password);
+      if (response?.isAdmin) return response;
+      return thunkAPI.rejectWithValue({error: 'You are not an admin'});
     } catch (err) {
+      console.log('loginAdminUser', err)
       return thunkAPI.rejectWithValue({ error: err.message });
     }
   }
@@ -80,6 +84,7 @@ export const authSlice = createSlice({
         state.loading = true;
       })
       .addCase(loginAdminUser.fulfilled, (state, action) => {
+        console.log('addCase', action.payload);
         state.admin = action.payload;
         state.loading = false;
         state.error = null;
