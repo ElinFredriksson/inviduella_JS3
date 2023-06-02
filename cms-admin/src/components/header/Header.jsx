@@ -24,7 +24,7 @@ const Header = () => {
             {admin  ? (
               <>
                 <li>
-                  <NavLink to="/admin-panel">Admin Panel</NavLink>
+                  <NavLink to="/admin-panel">Products</NavLink>
                 </li>
                 <li>
                   <NavLink to="/addProduct">Add Products</NavLink>
