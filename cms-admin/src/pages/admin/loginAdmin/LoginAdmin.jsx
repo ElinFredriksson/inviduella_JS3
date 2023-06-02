@@ -23,22 +23,7 @@ const LoginAdmin = () => {
     setFormData((data) => ({ ...data, [id]: value }))
   }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault()
 
-  //   try {
-  //     const loginData = loginAdminUser(formData)
-  //     const response = await dispatch(loginData)
-
-  //     if (response?.payload?.admin) {
-  //       setSubmitted(true)
-  //     } else {
-  //       dispatch(setError(''))
-  //     }
-  //   } catch (error) {
-  //     console.log('handleSubmit error', error)
-  //   }
-  // }
 
   const handleSubmit = async (e) => {
     try {
@@ -113,10 +98,10 @@ const LoginAdmin = () => {
           <button type="submit" className="submit-btn">
             Login
           </button>
-          <div className="social_login">
+          {/* <div className="social_login">
             <h3>Login with Google</h3>
             <GoogleBtn setSubmitted={setSubmitted} />
-          </div>
+          </div> */}
           <div className="terms">
             <p>
               You don't have an account? /{' '}

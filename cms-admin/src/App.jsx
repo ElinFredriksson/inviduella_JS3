@@ -41,31 +41,55 @@ const App = () => {
   const [user, setUser] = useState(null)
   // const isAdmin = admin && admin.isAdmin
 
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, async (_user) => {
+  //     let admin = null
+  //     const adminQuery = query(collection(db, 'admins'), where('uid', '==', _user?.uid));
+  //     const querySnapshot = await getDocs(adminQuery);
+  //     if (querySnapshot.docs.length === 0) {
+  //       dispatch(authReady(admin))
+  //       return;
+  //     }
+
+  //     if (_user) {
+  //       admin = {
+  //         uid: _user.uid,
+  //         email: _user.email,
+  //         isAdmin: true,
+  //       }
+  //     }
+
+  //     dispatch(authReady(admin))
+  //   })
+  // }, [dispatch])
+
+  // console.log('isAdmin', admin?.isAdmin);
+  // console.log('Admin', admin);
+  
   useEffect(() => {
     onAuthStateChanged(auth, async (_user) => {
       let admin = null
+      if (!_user) {
+        dispatch(authReady(admin))
+        return;
+      }
+  
       const adminQuery = query(collection(db, 'admins'), where('uid', '==', _user.uid));
       const querySnapshot = await getDocs(adminQuery);
       if (querySnapshot.docs.length === 0) {
         dispatch(authReady(admin))
         return;
       }
-
-      if (_user) {
-        admin = {
-          uid: _user.uid,
-          email: _user.email,
-          isAdmin: true,
-        }
+  
+      admin = {
+        uid: _user.uid,
+        email: _user.email,
+        isAdmin: true,
       }
-
+  
       dispatch(authReady(admin))
     })
   }, [dispatch])
-
-  console.log('isAdmin', admin?.isAdmin);
-  console.log('Admin', admin);
-  
   return (
     <>
       {authIsReady ? (
