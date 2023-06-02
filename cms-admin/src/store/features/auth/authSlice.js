@@ -24,7 +24,10 @@ export const loginAdminUser = createAsyncThunk(
       const { email, password } = formData;
       console.log('logging in');
       const response = await authService.loginAdmin(email, password);
-      if (response?.isAdmin) return response;
+      if (response?.isAdmin) {
+        console.log('response?.isAdmin', response?.isAdmin);  
+        return response;
+      }
       return thunkAPI.rejectWithValue({error: 'You are not an admin'});
     } catch (err) {
       console.log('loginAdminUser', err)
@@ -46,6 +49,7 @@ export const logoutAdmin = createAsyncThunk(
   'auth/logout',
   async (_, thunkAPI) => {
     try {
+      console.log(authService.logout());
       return await authService.logout();
     } catch (err) {
       return thunkAPI.rejectWithValue({ error: err.message });
@@ -84,12 +88,13 @@ export const authSlice = createSlice({
         state.loading = true;
       })
       .addCase(loginAdminUser.fulfilled, (state, action) => {
-        console.log('addCase', action.payload);
+        console.log('loginAdminUser.fulfilled', action.payload);
         state.admin = action.payload;
         state.loading = false;
         state.error = null;
       })
       .addCase(loginAdminUser.rejected, (state, action) => {
+        console.log('loginAdminUser.rejected', action.payload);
         state.loading = false;
         state.error = action.payload.error;
       })

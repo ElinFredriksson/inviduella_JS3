@@ -21,7 +21,7 @@ const Header = () => {
         </div>
         <div className="nav_links_div">
           <ul>
-            {admin ? (
+            {admin  ? (
               <>
                 <li>
                   <NavLink to="/admin-panel">Admin Panel</NavLink>

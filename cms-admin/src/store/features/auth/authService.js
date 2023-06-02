@@ -44,16 +44,14 @@ const loginAdmin = async (email, password) => {
   const querySnapshot = await getDocs(adminQuery);
   console.log('querySnapshot.docs', querySnapshot.docs)
   if (querySnapshot.docs.length === 0) {
+    console.log('isAdmin === false');
   return {
       isAdmin: false,
   }
 }
  
-  console.log('querySnapshot', querySnapshot);
-  if (querySnapshot.length > 0)
-    console.log('test123', querySnapshot[0].data());
-  
-  console.log('we shouldn\'t be here');
+
+  console.log('user is admin');
     const admin = {
     uid: userCredential.user.uid,
     email: userCredential.user.email,

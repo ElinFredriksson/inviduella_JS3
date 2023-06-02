@@ -23,6 +23,23 @@ const LoginAdmin = () => {
     setFormData((data) => ({ ...data, [id]: value }))
   }
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+
+  //   try {
+  //     const loginData = loginAdminUser(formData)
+  //     const response = await dispatch(loginData)
+
+  //     if (response?.payload?.admin) {
+  //       setSubmitted(true)
+  //     } else {
+  //       dispatch(setError(''))
+  //     }
+  //   } catch (error) {
+  //     console.log('handleSubmit error', error)
+  //   }
+  // }
+
   const handleSubmit = async (e) => {
     try {
       
@@ -48,6 +65,10 @@ const LoginAdmin = () => {
   useEffect(() => {
     if (submitted && admin) {
       navigate('/admin-panel')
+    } else if (!submitted && !admin) {
+      dispatch(setError(''))
+      setSubmitted(false)
+      navigate('/login-admin')
     }
   }, [submitted, admin, navigate])
 
